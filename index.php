@@ -41,6 +41,7 @@ spl_autoload_register(function($classname){
 $teacher = new profesor('Violet Starr', 25, 'F', 'Follar');
 $teacher2 = new profesor('Mia Malkova', 25, 'F', 'Matematica');
 $teacher3 = new profesor('ALL Might', 55, 'M', 'Programacion');
+$teacher4 = new profesor('Sanchez', 50 ,'M', 'Programacion');
 
 $room = new aula('Follar');
 
@@ -49,7 +50,7 @@ $student = new alumno('Jose', 23, 'M');
 $student->Assistance();
 $student->Assistance();
 $student->Assistance();
-
+$student->Assistance();
 $student->GetScore();
 
 $room->TeacherAssistance($teacher);

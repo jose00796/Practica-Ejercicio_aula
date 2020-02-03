@@ -35,7 +35,7 @@ spl_autoload_register(function($classname){
 });
 
 
-//30/01/2020 ME PARECE UNA BUENA IDEA PASAR EL PROFESOR COMO UNA DEPENCIA MEDIANTE EL CONSTRUCTOS DEL OBJETO ROOM
+//30/01/2020 ME PARECE UNA BUENA IDEA PASAR EL PROFESOR COMO UNA DEPENDENCIA MEDIANTE EL CONSTRUCTOR DEL OBJETO ROOM
 //TRATA DE DESARROLLAR ESTA IDEA GUAPO.
 
 $teacher = new profesor('Violet Starr', 25, 'F', 'Follar');
@@ -51,6 +51,7 @@ $student->Assistance();
 $student->Assistance();
 
 $student->GetScore();
+$teacher->Approve($student);
 
 $room->TeacherAssistance($teacher);
 $room->StudentAssistance($student);//AUN FALTAN UNAS COSAS

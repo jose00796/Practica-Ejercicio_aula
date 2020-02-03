@@ -9,7 +9,7 @@ class profesor extends persona
     protected $present = false;
     protected $matter;
 
-    public  function __construct($name, $age, $sex, $matter)
+    public function __construct($name, $age, $sex, $matter)
     {
         parent::__construct($name, $age, $sex);
         $this->matter = $matter;
@@ -42,5 +42,18 @@ class profesor extends persona
                 $this->present = false;
                 
             }
+    }
+
+    public function Approve(alumno $student)
+    {
+        if ($student->GetProme() <= 3) {
+            Show("{$student->GetName()} Esta Reprobado por BASURA");
+        }
+        elseif ($student->GetProme() >= 4 and $student->GetProme() <= 6) {
+            Show("{$student->GetName()} Puede ir a Reparacion");
+        }
+        elseif ($student->GetProme() > 6) {
+            Show("{$student->GetName()} Esta Aprobado :)");
+        }
     }
 }

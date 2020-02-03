@@ -28,13 +28,18 @@ class alumno extends persona
             $i++;
         }
 
-        $this->prome = $suma / 4;
+        return $this->prome = $suma / 4;
     }
 
     public function GetScore()
     {
         $this->SetScore();
         Show("Promedio Final del Estudiante : {$this->GetName()} = {$this->prome}");
+    }
+
+    public function GetProme()
+    {
+        return $this->prome;
     }
 
     public function GetPresent()

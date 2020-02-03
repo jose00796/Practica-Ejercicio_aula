@@ -1,4 +1,6 @@
-<?php
+# Practica-Ejercicio_aula
+Mi primer repositorio :)
+
 /* 8) Queremos representar con programación orientada a objetos, un aula con estudiantes y un profesor.
 Tanto de los estudiantes como de los profesores necesitamos saber su nombre, edad y sexo. 
 De los estudiantes, queremos saber también su calificación actual (entre 0 y 10) y del profesor que materia da.
@@ -19,42 +21,3 @@ El objetivo es crear un aula de alumnos y un profesor y determinar si puede dars
 Si se puede dar clase mostrar cuantos alumnos y alumnas (por separado) están aprobados de momento (imaginad que les están entregando las notas).
 NOTA: Los datos pueden ser aleatorios (nombres, edad, calificaciones, etc.) siempre y cuando tengan sentido
 (edad no puede ser 80 en un estudiante o calificación ser 12). */
-
-namespace Curso;
-
-require "src/helpers.php";
-spl_autoload_register(function($classname){
-       
-    if (strpos($classname, 'Curso\\') === 0) {
-            $classname = str_replace('Curso\\','',$classname);
-
-            if (file_exists("src/$classname.php")) {
-                require "src/$classname.php";
-            }
-        }
-});
-
-
-//30/01/2020 ME PARECE UNA BUENA IDEA PASAR EL PROFESOR COMO UNA DEPENDENCIA MEDIANTE EL CONSTRUCTOR DEL OBJETO ROOM
-//TRATA DE DESARROLLAR ESTA IDEA GUAPO.
-
-$teacher = new profesor('Violet Starr', 25, 'F', 'Follar');
-$teacher2 = new profesor('Mia Malkova', 25, 'F', 'Matematica');
-$teacher3 = new profesor('ALL Might', 55, 'M', 'Programacion');
-$teacher4 = new profesor('Sanchez', 50 ,'M', 'Programacion');
-
-$room = new aula('Follar');
-
-$student = new alumno('Jose', 23, 'M');
-
-$student->Assistance();
-$student->Assistance();
-$student->Assistance();
-$student->Assistance();
-$student->GetScore();
-$teacher->Approve($student);
-
-$room->TeacherAssistance($teacher);
-$room->StudentAssistance($student);//AUN FALTAN UNAS COSAS
-$room->CorrectTeacher($teacher);
-$room->OpenRoom();

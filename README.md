@@ -1,9 +1,6 @@
 # Practica-Ejercicio_aula
 Mi primer repositorio :)
 
-/*FRANMY Y MIGDALY SON DEMASIADO BELLAS, POR AHORA ME GUSTA UN POCO MAS MI BELLA Y DULCE MIGDALY :)*/
-
-
 /* 8) Queremos representar con programación orientada a objetos, un aula con estudiantes y un profesor.
 Tanto de los estudiantes como de los profesores necesitamos saber su nombre, edad y sexo. 
 De los estudiantes, queremos saber también su calificación actual (entre 0 y 10) y del profesor que materia da.

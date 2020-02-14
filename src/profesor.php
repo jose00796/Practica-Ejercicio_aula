@@ -30,13 +30,13 @@ class profesor extends persona
         $probabily = rand(0,100);
         $test = ($probabily * 20) / static::ASIST;
 
-            if ($probabily >= 10) {
+            if ($test >= 10) {
                 
                 Show(" El Profesor {$this->GetName()} Asistio Hoy");
                 $this->present = true;
 
             }
-            elseif ($probabily < 10) {
+            elseif ($test < 10) {
                 
                 Show(" El Profesor {$this->GetName()} No vino por Lacra");
                 $this->present = false;

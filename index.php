@@ -21,9 +21,17 @@ spl_autoload_register(function($classname){
 
 $student = new ejecutable();
 
+$room = new aula("Delicioso");
+$teacher = new profesor('Violett Starr', "23", 'F', 'Delicioso');
+
 $ListS = $student->GetStudents();
 
-foreach ($ListS as $student) {
+foreach ($ListS as $student) {    
     Show("{$student->GetName()}");
     $student->Assistance();
-}
+    $student->GetScore();
+
+    $teacher->Approve($student);
+
+    $room->StudentAssistance($student);
+} 

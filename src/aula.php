@@ -8,13 +8,16 @@
 
 namespace Curso;
 
+use student;
+
 class aula 
 {
-    const MAX_STUDENT = 6;
+    const MAX_STUDENT = 6;//PUEDE SER QUE HAGA FALTA QUITAR ESTA CONSTANTE...
 
     protected $matter;
     protected $Check = 0;
-    protected $subjet = array('Matematica', 'Programacion', 'Follar');
+    protected $cont;
+    protected $subjet = array('Matematica', 'Programacion', 'Delicioso');
 
     public function __construct($matter)
     {
@@ -57,22 +60,22 @@ class aula
         }
     }
 
-    //LOS METODOS DE ASISTENCIA DE AQUI ESTAN SEXYS PERO HAY UN PAR DE COSAS QUE NO ME CUADRAN, REVISALO POR FAVOR GUAPO.
+    public function GetCont()
+    {
+        return $this->cont;
+    }
+
+    //FALTA CREAR UN METODO O FORMA DE PREGUNTAR SI LA CANTIDAD DE ALUMNOS PRESENTE ES MENOR A 3...
 
     public function StudentAssistance(alumno $student)
     {
-        $student->Assistance();
-        $student->GetPresent();
+        if ($student->GetPresent() == true) {
+            $this->cont++;
+        }
 
-        if ($student->GetCont() > static::MAX_STUDENT) {
-            Show("Curso lleno, te Jodiste");
-        }
-        elseif ($student->GetCont() >= 3) {
-            Show("Cantidad de Alumnos Presentes suficiente");
+        if ($this->GetCont() >= 3) {
+            Show("Cantidad de Alumnos Presentes es igual a : {$this->GetCont()}, suficiente");
             $this->Check++;
-        }
-        elseif($student->GetCont() < 3) {
-            Show("Cantidad de Alumnos Insuficiente");
         }
     }
 

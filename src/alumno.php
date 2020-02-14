@@ -8,8 +8,7 @@ class alumno extends persona
 
     protected $score;
     protected $prome;
-    protected $cont = 0;
-    protected $present = false;
+    protected $present;
 
     public function __construct($name, $age, $sex)
     {
@@ -47,30 +46,17 @@ class alumno extends persona
         return $this->present;
     }
 
-    public function Arrived()
-    {
-        if ($this->GetPresent() == true) {
-            $this->cont++;
-        }
-    }
-
-    public function GetCont()
-    {
-        return $this->cont;
-    }
-
     public function Assistance()
     {
         $probabily = rand(0,100);
         $test = ($probabily * 50) / static::ASIST;
 
-            if ($probabily >= 25) {
+            if ($test >= 25) {
                 
                 Show(" El Estudiante {$this->GetName()} Asistio Hoy");
                 $this->present = true;
-                $this->Arrived();
             }
-            elseif ($probabily < 25) {
+            elseif ($test < 25) {
                 
                 Show(" El Estudiante {$this->GetName()} No vino por Vaca");
                 $this->present = false;

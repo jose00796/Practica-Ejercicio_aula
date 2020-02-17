@@ -21,8 +21,12 @@ spl_autoload_register(function($classname){
 
 $student = new ejecutable();
 
-$room = new aula("Delicioso");
-$teacher = new profesor('Violett Starr', "23", 'F', 'Delicioso');
+$teacher1 = new profesor('Violett Starr', "23", 'F', 'Delicioso');
+$teacher2 = new profesor('Guardiola', 50, 'M', 'Programacion');
+$teacher3 = new profesor('Light Yagami', 23, 'M', 'Dios del nuevo Mundo');
+$teacher4 = new profesor('Mia Malkova', 25 ,'F', 'Matematica');
+
+$room = new aula('Delicioso', $teacher1);
 
 $ListS = $student->GetStudents();
 
@@ -31,7 +35,9 @@ foreach ($ListS as $student) {
     $student->Assistance();
     $student->GetScore();
 
-    $teacher->Approve($student);
+    $teacher1->Approve($student);
 
     $room->StudentAssistance($student);
 } 
+
+$room->OpenRoom();

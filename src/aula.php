@@ -8,6 +8,7 @@
 
 namespace Curso;
 
+use Psy\ExecutionLoop;
 use student;
 
 class aula 
@@ -19,9 +20,10 @@ class aula
     protected $cont;
     protected $subjet = array('Matematica', 'Programacion', 'Delicioso');
 
-    public function __construct($matter)
+    public function __construct($matter, profesor $teacher)
     {
         $this->matter = $matter;
+        $this->teacher = $teacher;
     }
 
     public function GetMatter()

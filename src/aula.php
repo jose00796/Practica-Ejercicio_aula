@@ -8,6 +8,7 @@
 
 namespace Curso;
 
+use Exception;
 use student;
 
 class aula 
@@ -37,7 +38,8 @@ class aula
         if (in_array($this->matter, $this->subjet)) {
             Show("La materia {$this->matter} esta disponible entre las opciones");
         }else {
-            Show("La materia {$this->matter} NO esta disponible entre las opciones");
+            //Show("La materia {$this->matter} NO esta disponible entre las opciones");
+            throw new Exception("La Materia Seleccionada = {$this->matter} No Existe entre las opciones");
         }
     }
 
@@ -58,7 +60,9 @@ class aula
             $this->Check++;
         }
         elseif ($this->GetMatter() != $teacher->GetMatter()) {
-            Show("{$teacher->GetName()} NO tiene nada que hacer aqui, Fuera Basura ");
+            //Show("{$teacher->GetName()} NO tiene nada que hacer aqui, Fuera Basura ");
+            throw new Exception("El profesor {$teacher->GetName()} NO imparte la materia correspondiente a esta aula");
+            
             $this->Check = 0;
         }
     }

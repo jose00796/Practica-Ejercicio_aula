@@ -2,6 +2,8 @@
 
 namespace Curso;
 
+use Exception;
+
 require "src/helpers.php";
 spl_autoload_register(function($classname){
        
@@ -20,6 +22,7 @@ spl_autoload_register(function($classname){
 //VE SI TE PONES A TRABAJAR EN ESTA MIERDA COÑO E TU PEPA...
 
 $student = new ejecutable();
+
 $teacher1 = new profesor('Violett Starr', 23, 'F', 'Delicioso');
 $teacher2 = new profesor('Kendra Lust', 45, 'F', 'Programacion');
 $teacher3 = new profesor('Mia Malkova', 25, 'F', 'Matematica');

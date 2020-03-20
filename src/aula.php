@@ -19,9 +19,12 @@ class aula
     protected $cont;
     protected $subjet = array('Matematica', 'Programacion', 'Delicioso');
 
-    public function __construct($matter)
+    public function __construct($matter, profesor $teacher)
     {
         $this->matter = $matter;
+        $this->teacher = $teacher;
+        $this->MatterExists();
+        $this->CorrectTeacher($teacher);
     }
 
     public function GetMatter()

@@ -20,9 +20,11 @@ spl_autoload_register(function($classname){
 //VE SI TE PONES A TRABAJAR EN ESTA MIERDA COÑO E TU PEPA...
 
 $student = new ejecutable();
+$teacher1 = new profesor('Violett Starr', 23, 'F', 'Delicioso');
+$teacher2 = new profesor('Kendra Lust', 45, 'F', 'Programacion');
+$teacher3 = new profesor('Mia Malkova', 25, 'F', 'Matematica');
 
-$room = new aula("Delicioso");
-$teacher = new profesor('Violett Starr', "23", 'F', 'Delicioso');
+$room = new aula("Delicioso", $teacher1);
 
 $ListS = $student->GetStudents();
 
@@ -31,7 +33,7 @@ foreach ($ListS as $student) {
     $student->Assistance();
     $student->GetScore();
 
-    $teacher->Approve($student);
+    $teacher1->Approve($student);
 
     $room->StudentAssistance($student);
 } 

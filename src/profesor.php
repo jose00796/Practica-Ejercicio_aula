@@ -47,13 +47,13 @@ class profesor extends persona
     public function Approve(alumno $student)
     {
         if ($student->GetProme() <= 3) {
-            Show("{$student->GetName()} Esta Reprobado por BASURA");
+            Show("{$student->GetName()} Esta Reprobado por BASURA <hr>");
         }
         elseif ($student->GetProme() >= 4 and $student->GetProme() <= 6) {
-            Show("{$student->GetName()} Puede ir a Reparacion");
+            Show("{$student->GetName()} Puede ir a Reparacion <hr>");
         }
         elseif ($student->GetProme() > 6) {
-            Show("{$student->GetName()} Esta Aprobado :)");
+            Show("{$student->GetName()} Esta Aprobado :) <hr>");
         }
     }
 }

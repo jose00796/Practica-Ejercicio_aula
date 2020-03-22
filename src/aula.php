@@ -9,16 +9,17 @@
 namespace Curso;
 
 use Exception;
-use student;
 
 class aula 
 {
     const MAX_STUDENT = 6;//PUEDE SER QUE HAGA FALTA QUITAR ESTA CONSTANTE...
+    const MIN_STUDENT = 3;
 
     protected $matter;
     protected $Check = 0;
     protected $cont;
     protected $subjet = array('Matematica', 'Programacion', 'Delicioso');
+    protected $open = false;
 
     public function __construct($matter, profesor $teacher)
     {
@@ -26,6 +27,7 @@ class aula
         $this->teacher = $teacher;
         $this->MatterExists();
         $this->CorrectTeacher($teacher);
+        $this->TeacherAssistance($teacher);
     }
 
     public function GetMatter()
@@ -48,6 +50,10 @@ class aula
         $teacher->Assistance();
         $teacher->GetPresent();
         
+        /*if ($teacher->GetPresent() == false) {
+            $this->Check--;
+        }*/
+
         if ($teacher->GetPresent() == true) {
             $this->Check++;
         }
@@ -62,8 +68,6 @@ class aula
         elseif ($this->GetMatter() != $teacher->GetMatter()) {
             //Show("{$teacher->GetName()} NO tiene nada que hacer aqui, Fuera Basura ");
             throw new Exception("El profesor {$teacher->GetName()} NO imparte la materia correspondiente a esta aula");
-            
-            $this->Check = 0;
         }
     }
 
@@ -79,27 +83,42 @@ class aula
         if ($student->GetPresent() == true) {
             $this->cont++;
         }
+    } 
 
-        if ($this->GetCont() >= 3) {
-            Show("Cantidad de Alumnos Presentes es igual a : {$this->GetCont()}, suficiente");
+    public function StudentEnough(){
+        
+        if ($this->GetCont() >= static::MIN_STUDENT ) {
+            //Show("Cantidad de Alumnos Presentes es igual a : {$this->GetCont()}, suficiente");
             $this->Check++;
         }
+    }
+
+    public function GetCheck(){
+        return $this->Check;
+    }
+
+    public function Key(){
+
+        if ($this->GetCheck() == 3) {
+            return $this->open = true;
+        }else{
+            return $this->open = false;
+        }
+
     }
 
     //ESTE METODO HABILITARA EL AULA DE CLASES SI SE CUMPLEN TODAS LAS CONDICIONES.
     public function OpenRoom()
     {
-       switch ($this->Check) {
-           case '1':
-               Show(" SE CUMPLE LA PRIMERA CONDICION");
-               break;
-           
-            case '2':
-                Show(" SE CUMPLE LA SEGUNDA CONDICION");
+       switch ($this->Key()) {
+    
+            case false:
+               throw new Exception("No se cumplen todas la condiciones para abrir el aula, Verificar Por Favor...");
+               
             break;
 
-            case '3':
-                Show(" SE CUMPLE LA TERCERA CONDICION");
+            case true:
+                Show(" AULA DE {$this->GetMatter()} HABILITADA POR CUMPLIR TODAS LAS CONDICIONES");
             break;
 
            default:

@@ -40,7 +40,6 @@ class aula
         if (in_array($this->matter, $this->subjet)) {
             Show("La materia {$this->matter} esta disponible entre las opciones");
         }else {
-            //Show("La materia {$this->matter} NO esta disponible entre las opciones");
             throw new Exception("La Materia Seleccionada = {$this->matter} No Existe entre las opciones");
         }
     }
@@ -49,10 +48,6 @@ class aula
     {
         $teacher->Assistance();
         $teacher->GetPresent();
-        
-        /*if ($teacher->GetPresent() == false) {
-            $this->Check--;
-        }*/
 
         if ($teacher->GetPresent() == true) {
             $this->Check++;
@@ -66,7 +61,6 @@ class aula
             $this->Check++;
         }
         elseif ($this->GetMatter() != $teacher->GetMatter()) {
-            //Show("{$teacher->GetName()} NO tiene nada que hacer aqui, Fuera Basura ");
             throw new Exception("El profesor {$teacher->GetName()} NO imparte la materia correspondiente a esta aula");
         }
     }
@@ -75,8 +69,6 @@ class aula
     {
         return $this->cont;
     }
-
-    //FALTA CREAR UN METODO O FORMA DE PREGUNTAR SI LA CANTIDAD DE ALUMNOS PRESENTE ES MENOR A 3...
 
     public function StudentAssistance(alumno $student)
     {
@@ -88,7 +80,6 @@ class aula
     public function StudentEnough(){
         
         if ($this->GetCont() >= static::MIN_STUDENT ) {
-            //Show("Cantidad de Alumnos Presentes es igual a : {$this->GetCont()}, suficiente");
             $this->Check++;
         }
     }

@@ -25,6 +25,8 @@ spl_autoload_register(function($classname){
 //QUEDO DEMASIADO SEXY AHORA VE SI LO PUEDES PASAR A ANGULAR CON ALGUNOS ESTILOS...
 //TOCA AGREGAR UNOS LOGGER Y POR QUE NO UN AUTOCARGA DE COMPOSER...
 
+Log::SetLogger(new Html_Logger);
+
 $student = new ejecutable();
 
 $teacher1 = new profesor('Violett Starr', 23, 'F', 'Delicioso');
@@ -36,7 +38,7 @@ $room = new aula("Matematica", $teacher3);
 $ListS = $student->GetStudents();
 
 foreach ($ListS as $student) {    
-    Show("{$student->GetName()}");
+    Log::Info("{$student->GetName()}");
     $student->Assistance();
     $student->GetScore();
 

@@ -35,42 +35,45 @@ class profesor extends persona
 
             if ($test >= 10) {
                 
-                Show(" El Profesor {$this->GetName()} Asistio Hoy <hr>");
+                Log::Info(" El Profesor {$this->GetName()} Asistio Hoy <hr>");
                 $this->present = true;
 
             }
             elseif ($test < 10) {
                 
-                Show(" El Profesor {$this->GetName()} No vino por Lacra <hr>");
+                Log::Info(" El Profesor {$this->GetName()} No vino por Lacra <hr>");
                 $this->present = false;
                 
             }
     }
 
-    public function GetApprove(){
-        Show("Cantidad de Alumnos Aprobados : {$this->contApp}");
+    public function GetApprove()
+    {
+        Log::Info("Cantidad de Alumnos Aprobados : {$this->contApp}");
     }
 
-    public function GetRep(){
-        Show("Cantidad de Alumnos Reprobados : {$this->contRep}");
+    public function GetRep()
+    {
+        Log::Info("Cantidad de Alumnos Reprobados : {$this->contRep}");
     }
 
-    public function GetObs(){
-        Show("Cantidad de Alumnos para Reparar : {$this->contObs}");
+    public function GetObs()
+    {
+        Log::Info("Cantidad de Alumnos para Reparar : {$this->contObs}");
     }
 
     public function Approve(alumno $student)
     {
         if ($student->GetProme() < 4) {
-            Show("{$student->GetName()} Esta Reprobado por BASURA <hr>");
+            Log::Info("{$student->GetName()} Esta Reprobado por BASURA <hr>");
             $this->contRep++;
         }
         elseif ($student->GetProme() >= 4 and $student->GetProme() <= 6) {
-            Show("{$student->GetName()} Puede ir a Reparacion <hr>");
+            Log::Info("{$student->GetName()} Puede ir a Reparacion <hr>");
             $this->contObs++;
         }
         elseif ($student->GetProme() > 6) {
-            Show("{$student->GetName()} Esta Aprobado :) <hr>");
+            Log::Info("{$student->GetName()} Esta Aprobado :) <hr>");
             $this->contApp++;
         }
     }

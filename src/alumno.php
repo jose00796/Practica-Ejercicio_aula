@@ -34,7 +34,7 @@ class alumno extends persona
     public function GetScore()
     {
         $this->SetScore();
-        Show("Promedio Final del Estudiante : {$this->GetName()} = {$this->GetProme()}");
+        Log::Info("Promedio Final del Estudiante : {$this->GetName()} = {$this->GetProme()}");
     }
 
     public function GetProme()
@@ -66,13 +66,13 @@ class alumno extends persona
 
             if ($probabily >= 25) {
                 
-                Show(" El Estudiante {$this->GetName()} Asistio Hoy");
+                Log::Info(" El Estudiante {$this->GetName()} Asistio Hoy");
                 $this->present = true;
                 $this->Arrived();
             }
             elseif ($probabily < 25) {
                 
-                Show(" El Estudiante {$this->GetName()} No vino por Vaca");
+                Log::Info(" El Estudiante {$this->GetName()} No vino por Vaca");
                 $this->present = false;
 
             }

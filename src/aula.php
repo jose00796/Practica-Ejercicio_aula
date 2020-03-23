@@ -38,7 +38,7 @@ class aula
     public function MatterExists()
     {
         if (in_array($this->matter, $this->subjet)) {
-            Show("La materia {$this->matter} esta disponible entre las opciones");
+            Log::Info("La materia {$this->matter} esta disponible entre las opciones");
         }else {
             throw new Exception("La Materia Seleccionada = {$this->matter} No Existe entre las opciones");
         }
@@ -57,7 +57,7 @@ class aula
     public function CorrectTeacher(profesor $teacher)
     {
         if ($this->GetMatter() == $teacher->GetMatter()) {
-            Show("{$teacher->GetName()} Imparte la Materia correspondiente al aula de : {$this->GetMatter()}");
+            Log::Info("{$teacher->GetName()} Imparte la Materia correspondiente al aula de : {$this->GetMatter()}");
             $this->Check++;
         }
         elseif ($this->GetMatter() != $teacher->GetMatter()) {
@@ -77,18 +77,20 @@ class aula
         }
     } 
 
-    public function StudentEnough(){
-        
+    public function StudentEnough()
+    {    
         if ($this->GetCont() >= static::MIN_STUDENT ) {
             $this->Check++;
         }
     }
 
-    public function GetCheck(){
+    public function GetCheck()
+    {
         return $this->Check;
     }
 
-    public function Key(){
+    public function Key()
+    {
 
         if ($this->GetCheck() == 3) {
             return $this->open = true;
@@ -109,7 +111,7 @@ class aula
             break;
 
             case true:
-                Show(" AULA DE {$this->GetMatter()} HABILITADA POR CUMPLIR TODAS LAS CONDICIONES");
+                Log::Info(" AULA DE {$this->GetMatter()} HABILITADA POR CUMPLIR TODAS LAS CONDICIONES");
             break;
 
            default:

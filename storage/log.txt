@@ -1,0 +1,31 @@
+(2020-03-23 04:02:36) La materia Matematica esta disponible entre las opciones
+(2020-03-23 04:02:36) Mia Malkova Imparte la Materia correspondiente al aula de : Matematica
+(2020-03-23 04:02:36)  El Profesor Mia Malkova Asistio Hoy <hr>
+(2020-03-23 04:02:36) Jose
+(2020-03-23 04:02:36)  El Estudiante Jose No vino por Vaca
+(2020-03-23 04:02:36) Promedio Final del Estudiante : Jose = 4.75
+(2020-03-23 04:02:36) Jose Puede ir a Reparacion <hr>
+(2020-03-23 04:02:36) Franmy
+(2020-03-23 04:02:36)  El Estudiante Franmy Asistio Hoy
+(2020-03-23 04:02:36) Promedio Final del Estudiante : Franmy = 5.75
+(2020-03-23 04:02:36) Franmy Puede ir a Reparacion <hr>
+(2020-03-23 04:02:36) Migdaly
+(2020-03-23 04:02:36)  El Estudiante Migdaly Asistio Hoy
+(2020-03-23 04:02:36) Promedio Final del Estudiante : Migdaly = 5
+(2020-03-23 04:02:36) Migdaly Puede ir a Reparacion <hr>
+(2020-03-23 04:02:36) Eiker
+(2020-03-23 04:02:36)  El Estudiante Eiker Asistio Hoy
+(2020-03-23 04:02:36) Promedio Final del Estudiante : Eiker = 1.75
+(2020-03-23 04:02:36) Eiker Esta Reprobado por BASURA <hr>
+(2020-03-23 04:02:36) Ibelise
+(2020-03-23 04:02:36)  El Estudiante Ibelise No vino por Vaca
+(2020-03-23 04:02:36) Promedio Final del Estudiante : Ibelise = 4.5
+(2020-03-23 04:02:36) Ibelise Puede ir a Reparacion <hr>
+(2020-03-23 04:02:36) Pedro
+(2020-03-23 04:02:36)  El Estudiante Pedro Asistio Hoy
+(2020-03-23 04:02:36) Promedio Final del Estudiante : Pedro = 5
+(2020-03-23 04:02:36) Pedro Puede ir a Reparacion <hr>
+(2020-03-23 04:02:36) Cantidad de Alumnos Aprobados : 0
+(2020-03-23 04:02:36) Cantidad de Alumnos Reprobados : 1
+(2020-03-23 04:02:36) Cantidad de Alumnos para Reparar : 5
+(2020-03-23 04:02:36)  AULA DE Matematica HABILITADA POR CUMPLIR TODAS LAS CONDICIONES

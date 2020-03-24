@@ -1,0 +1,18 @@
+{
+    "name": "curso/poo-aula",
+    "description": "Programa de Ejercicio-Aula el cual quedo muy sexy Papu",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose Andres",
+            "email": "josedarkrai@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Curso\\": "src/"
+        }
+    }
+}

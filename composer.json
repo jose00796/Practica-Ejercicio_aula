@@ -1,18 +1,18 @@
 {
-    "name": "curso/poo-aula",
-    "description": "Programa de Ejercicio-Aula el cual quedo muy sexy Papu",
+    "name": "jose/aula",
+    "description": "autocarga composer ejercicio aula",
     "type": "project",
     "license": "MIT",
     "authors": [
         {
-            "name": "Jose Andres",
+            "name": "jose machado",
             "email": "josedarkrai@gmail.com"
         }
     ],
     "require": {},
     "autoload": {
         "psr-4": {
-            "Curso\\": "src/"
+            "Curso\\" : "src/"
         }
     }
 }

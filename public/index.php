@@ -32,7 +32,8 @@ foreach ($ListS as $student) {
     $student->Assistance();
     $student->GetScore();
 
-    $teacher1->Approve($student);
+    $teacher3->ValidateTeacher();
+    $teacher3->Approve($student);
 
     $room->StudentAssistance($student);
 } 

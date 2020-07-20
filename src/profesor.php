@@ -52,17 +52,29 @@ class profesor extends persona
 
     public function GetApprove()
     {
-        Log::Info("Cantidad de Alumnos Aprobados : {$this->contApp}");
+        if ($this->GetKey() == true) {
+            Log::Info("Cantidad de Alumnos Aprobados : {$this->contApp}");
+        }else {
+            throw new Exception("Este Profesor no le corresponde Calificar a las bendiciones de esta Materia");
+        }
     }
 
     public function GetRep()
     {
-        Log::Info("Cantidad de Alumnos Reprobados : {$this->contRep}");
+        if ($this->GetKey() == true) {
+            Log::Info("Cantidad de Alumnos Reprobados : {$this->contRep}");
+        }else {
+            throw new Exception("Este Profesor no le corresponde Calificar a las bendiciones de esta Materia");
+        }
     }
 
     public function GetObs()
     {
-        Log::Info("Cantidad de Alumnos para Reparar : {$this->contObs}");
+        if ($this->GetKey() == true) {
+            Log::Info("Cantidad de Alumnos para Reparar : {$this->contObs}");
+        }else {
+            throw new Exception("Este Profesor no le corresponde Calificar a las bendiciones de esta Materia");
+        }
     }
 
     public function ValidateTeacher()
@@ -94,7 +106,7 @@ class profesor extends persona
                 $this->contApp++;
             }
         } else{
-            throw new Exception("Profesor no Coincide");
+            throw new Exception("Este Profesor no le corresponde Calificar a las bendiciones de esta Materia");
             
         }
     }

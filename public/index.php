@@ -40,8 +40,8 @@ foreach ($ListS as $student) {
 
 $room->StudentEnough();
 
-$teacher1->GetApprove();
-$teacher1->GetRep();
-$teacher1->GetObs();
+$teacher3->GetApprove();
+$teacher3->GetRep();
+$teacher3->GetObs();
 
 $room->OpenRoom();

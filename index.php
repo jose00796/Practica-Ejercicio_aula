@@ -36,7 +36,6 @@ foreach ($ListS as $student) {
     $student->GetScore();
 
     $teacher1->Approve($student);
-
     $room->StudentAssistance($student);
 } 
 
